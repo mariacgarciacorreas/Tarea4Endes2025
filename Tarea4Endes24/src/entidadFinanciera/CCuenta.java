@@ -5,7 +5,12 @@
 
 package entidadFinanciera;
 
-
+/**
+ * 
+ * @author María C García Correas
+ * @version 1.0
+ * @since 05/03/2025
+ */
 public class CCuenta {
 
     /**
@@ -18,10 +23,20 @@ public class CCuenta {
 
     private final String ERRORCANTIDADNEGATIVA = "No se puede ingresar una cantidad negativa";
 
+    /**
+     * Método constructor vacío
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * Método constructor con todos los parámetros
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -29,10 +44,21 @@ public class CCuenta {
         saldo=sal;
     }
     
+    /**
+     * 
+     * Método que devuelve el saldo actual
+     * @return saldo actual
+     */
     public double estado(){
         return this.getSaldo();
     }
 
+    /**
+     * 
+     * Método ingresar
+     * @param cantidad
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -40,6 +66,12 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * 
+     * Método retirar
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
